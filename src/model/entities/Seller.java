@@ -1,10 +1,10 @@
-package com.entities;
+package model.entities;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Sellers implements Serializable{
+public class Seller implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -15,11 +15,11 @@ public class Sellers implements Serializable{
 	private double baseSalary;
 	private Department department;
 	
-	public Sellers() {
+	public Seller() {
 		
 	}
 	
-	public Sellers(int id, String name, String email, Date birthDate, double baseSalary, Department department) {
+	public Seller(int id, String name, String email, Date birthDate, double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -91,8 +91,23 @@ public class Sellers implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Sellers other = (Sellers) obj;
+		Seller other = (Seller) obj;
 		return id == other.id;
+	}
+	
+	@Override
+	public String toString() {
+		return id
+			+ ", "
+			+ name
+			+ ", "
+			+ email
+			+ ", "
+			+ birthDate
+			+ ", "
+			+ baseSalary
+			+ ", "
+			+ department;
 	}
 	
 }
